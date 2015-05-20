@@ -96,7 +96,7 @@ std::string toJSON2( SEXP x )
 				if( names != NULL_USER_OBJECT )
 					oss << escapeString(CHAR(STRING_ELT(names, i))) << ":";
 				if( LOGICAL(x)[i] == NA_INTEGER )
-					oss << "\"NA\"";
+					oss << "null";
 				else if( ISNAN( LOGICAL(x)[i] ) )
 					oss << "\"NaN\"";
 				else if( LOGICAL(x)[i] )
@@ -112,7 +112,7 @@ std::string toJSON2( SEXP x )
 				if( names != NULL_USER_OBJECT )
 					oss << escapeString(CHAR(STRING_ELT(names, i))) << ":";
 				if( INTEGER(x)[i] == NA_INTEGER )
-					oss << "\"NA\"";
+					oss << "null";
 				else if( ISNAN( INTEGER(x)[i] ) )
 					oss << "\"NaN\"";
 				else if( levels != NULL_USER_OBJECT )
@@ -130,7 +130,7 @@ std::string toJSON2( SEXP x )
 					oss << escapeString(CHAR(STRING_ELT(names, i))) << ":";
 				}
 				if( ISNA(REAL(x)[i]) ) {
-					oss << "\"NA\"";
+					oss << "null";
 				} else if( ISNAN(REAL(x)[i]) ) {
 					oss << "\"NaN\"";
 				} else if( R_FINITE(REAL(x)[i]) ) {
@@ -163,7 +163,7 @@ std::string toJSON2( SEXP x )
 				if( names != NULL_USER_OBJECT )
 					oss << escapeString(CHAR(STRING_ELT(names, i))) << ":";
 				if( STRING_ELT(x,i) == NA_STRING )
-					oss << "\"NA\"";
+					oss << "null";
 				else
 					oss << escapeString(CHAR(STRING_ELT(x,i)));
 			}

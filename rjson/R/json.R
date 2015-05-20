@@ -63,7 +63,7 @@ toJSON <- function( x, method = "C" )
 		return( "\"NaN\"" )
 
 	if( is.na(x) )
-		return( "\"NA\"" )
+		return( "null" )
 
 	if( is.infinite(x) )
 		return( ifelse( x == Inf, "\"Inf\"", "\"-Inf\"" ) )
