@@ -1,4 +1,4 @@
 .onLoad <- function(lib, pkg)
 {
-	library.dynam("rjson", pkg, lib)
+	library.dynam("rjson2", pkg, lib)
 }
